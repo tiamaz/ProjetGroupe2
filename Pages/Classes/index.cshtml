@@ -1,0 +1,68 @@
+﻿@page
+@model ProjetGroupe2.Pages.Classes.indexModel
+@{
+}
+
+
+
+@if(Model.classes.Count() > 0)
+{
+
+
+        <table class="table table-stripped border">
+
+                        <th>
+                                <td>
+                                    <label asp-for="classes.FirstOrDefault().NonClasse"></label>
+                                </td>
+
+                                <td>
+                                    <label asp-for="classes.FirstOrDefault().Niveau"></label>
+                                </td>
+
+                                <td>
+                                    <label asp-for="classes.FirstOrDefault().Filiere"></label>
+                                </td>
+
+                                 <td>
+                                    <label asp-for="classes.FirstOrDefault().NombreEtudiant"></label>
+                                </td>
+                        </th>
+
+               
+
+        @foreach(var item in Model.classes)
+        {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(m => item.NonClasse);
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(m => item.Niveau);
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(m => item.Filiere);
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(m => item.NombreEtudiant);
+                    </td>
+
+                </tr>
+        
+        }
+
+         </table>
+
+}
+
+else {
+
+    <div class="card">
+        <div class="card-body">
+            <p class="card-text"> @User.Identity.Name  Vous n'avez crée aucune classe</p>
+        </div>
+    </div>
+}
