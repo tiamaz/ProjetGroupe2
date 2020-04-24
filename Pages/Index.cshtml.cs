@@ -56,7 +56,8 @@ namespace ProjetGroupe2.Pages
                             on clas.IdClasse equals pub.IdClasse
                             select pub).ToList();
 
-
         }
+
+     
     }
 }

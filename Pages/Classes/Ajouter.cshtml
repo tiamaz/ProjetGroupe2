@@ -1,0 +1,55 @@
+﻿@page
+@model ProjetGroupe2.Pages.classes.AjouterModel
+@{
+}
+
+
+<form method="post">
+
+
+    <input hidden asp-for="classe.IdProf">
+    <input hidden asp-for="classe.NombreEtudiant">
+
+        <div class="row">
+            <div class="col-2">
+            <label asp-for="classe.NonClasse"></label>
+            </div>
+            <div class="col-6">
+            <input class="form-control" asp-for="classe.NonClasse" />
+            </div>
+            <span asp-for="classe.NonClass" class="text-danger"></span>
+        </div>
+
+        <div class="row">
+            <div class="col-2">
+            <label asp-for="classe.Filiere"></label>
+            </div>
+            <div class="col-6">
+            <input class="form-control" asp-for="classe.Filiere" />
+            </div>
+            <span asp-for="classe.Filiere" class="text-danger"></span>
+        </div>
+
+
+        <div class="row">
+            <div class="col-2">
+            <label asp-for="classe.Niveau"></label>
+            </div>
+            <div class="col-6">
+            <input class="form-control" asp-for="classe.Niveau" />
+            </div>
+            <span asp-for="classe.NonClass" class="text-danger"></span>
+        </div>
+
+
+         <div class="row">
+            <div class="col-2">
+            </div>
+            <div class="col-6">
+        <button submit class="btn btn-success form-control">Valider</button>
+            </div>
+        </div>
+        
+
+
+</form>

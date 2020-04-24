@@ -4,30 +4,47 @@
 }
 
 
+<div class="container">
+<div class="row">
+     <div class="col-8">
+        
+    </div>
+    <div class="col-4">
+        <a class="btn btn-primary" asp-page="Ajouter">Ajouter une classe</a>
+    </div>
+
+</div>
+
+</div>
+
 
 @if(Model.classes.Count() > 0)
 {
 
 
-        <table class="table table-stripped border">
+        <table class="table table-striped border">
 
-                        <th>
-                                <td>
+                        <tr class="table-secondary">
+                                <th>
                                     <label asp-for="classes.FirstOrDefault().NonClasse"></label>
-                                </td>
+                                </th>
 
-                                <td>
+                                <th>
                                     <label asp-for="classes.FirstOrDefault().Niveau"></label>
-                                </td>
+                                </th>
 
-                                <td>
+                                <th>
                                     <label asp-for="classes.FirstOrDefault().Filiere"></label>
-                                </td>
+                                </th>
 
-                                 <td>
+                                 <th>
                                     <label asp-for="classes.FirstOrDefault().NombreEtudiant"></label>
-                                </td>
-                        </th>
+                                </th>
+
+                                <th>
+                                </th>
+                                
+                        </tr>
 
                
 
@@ -35,21 +52,24 @@
         {
                 <tr>
                     <td>
-                        @Html.DisplayFor(m => item.NonClasse);
+                        @Html.DisplayFor(m => item.NonClasse)
                     </td>
 
                     <td>
-                        @Html.DisplayFor(m => item.Niveau);
+                        @Html.DisplayFor(m => item.Niveau)
                     </td>
 
                     <td>
-                        @Html.DisplayFor(m => item.Filiere);
+                        @Html.DisplayFor(m => item.Filiere)
                     </td>
 
                     <td>
-                        @Html.DisplayFor(m => item.NombreEtudiant);
+                        @Html.DisplayFor(m => item.NombreEtudiant)
                     </td>
 
+                    <td>
+                        <a class="btn btn-danger" asp-page="affiche"  asp-route-id="@item.IdClasse">Accéder</a>
+                    </td>
                 </tr>
         
         }
